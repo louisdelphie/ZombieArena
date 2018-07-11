@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <sstream>
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "ZombieArena.h"
@@ -86,6 +87,87 @@ int main()
 	// About the game
 	int score = 0;
 	int hiScore = 0;
+
+	// For the home/game over screen
+	Sprite spriteGameOver;
+	Texture textureGameOver = TextureHolder::GetTexture("graphics/background1.png");
+	spriteGameOver.setTexture(textureGameOver);
+	spriteGameOver.setPosition(0, 0);
+
+	// Create a view for the HUD
+	View hudView(sf::FloatRect(0, 0, resolution.x, resolution.y));
+
+	// Create a sprite for the ammo icon
+	Sprite spriteAmmoIcon;
+	Texture textureAmmoIcon = TextureHolder::GetTexture("graphics/ammo_icon.png");
+	spriteAmmoIcon.setTexture(textureAmmoIcon);
+	spriteAmmoIcon.setPosition(20, 980);
+
+	// Load the font
+	Font font;
+	font.loadFromFile("fonts/zombiecontrol.ttf");
+
+	// Paused
+	Text pausedText;
+	pausedText.setFont(font);
+	pausedText.setCharacterSize(155);
+	pausedText.setFillColor(Color::White);
+	pausedText.setPosition(400, 400);
+	pausedText.setString("Press Enter \n to continue");
+
+	//Game Over
+	Text gameOverText;
+	gameOverText.setFont(font);
+	gameOverText.setCharacterSize(125);
+	gameOverText.setFillColor(Color::White);
+	gameOverText.setPosition(250, 850);
+	gameOverText.setString("Press Enter to play");
+
+	// LEVELING UP
+	int levelUpPosition[] = { 150,250 };
+	std::stringstream levelUpstream;
+	levelUpstream <<
+		"1- Increased rate of fire" <<
+		"\n2- Increased clip size (next reload)" <<
+		"\n3- Increased max health" <<
+		"\n4- Increased run speed" <<
+		"\n5- More and better health pickups" <<
+		"\n6- More and better ammo pickups";
+	Text levelUpText = MakeText::setParam(font, 80, Color::White,levelUpPosition ,levelUpstream.str());
+
+	// Ammo
+	int ammoTextPosition[] = { 200,980 };
+	Text ammotext = MakeText::setParam(font, 55, Color::White, ammoTextPosition);
+
+	// Score
+	int scoreTextPosition[] = { 20,0 };
+	Text scoreText = MakeText::setParam(font, 55, Color::White, scoreTextPosition);
+
+	// Hi Score
+	int hiScoreTextPosition[] = { 1400, 0 };
+	std::stringstream s;
+	s << "Hi Score:" << hiScore;
+	Text hiScoreText = MakeText::setParam(font, 55, Color::White, hiScoreTextPosition, s.str());
+
+	// Zombies remaining
+	int zombiesRemainingTextPosition[] = { 1500, 980 };
+	Text zombiesRemainingText = MakeText::setParam(font, 55, Color::White, zombiesRemainingTextPosition, "Zombies: 100");
+
+	// Wave number
+	int wave = 0;
+	int waveNumberTextPosition[] = { 1250,980 };
+	Text waveNumberText = MakeText::setParam(font, 55, Color::White, waveNumberTextPosition, "Wave: 0");
+
+	// Health bar
+	RectangleShape healthBar;
+	healthBar.setFillColor(Color::Red);
+	healthBar.setPosition(450, 980);
+	
+	// When did we last update the HUD?
+	int framesSinceLastHUDUpdate = 0;
+
+	// How often (in frame) should we update the HUD
+	int fpsMeasurementFrameInterval = 1000;
 
 	//The main game loop
 	while (window.isOpen())
@@ -401,6 +483,46 @@ int main()
 			{
 				bulletsSpare += ammoPickup.gotIt();
 			}
+
+			// size up the health bar
+			healthBar.setSize(Vector2f(player.getHealth() * 3, 50));
+
+			// Incrementthe number of frames since the previous update
+			framesSinceLastHUDUpdate++;
+
+			// re-calculare every fpsMeasurementFrameInterval frames
+			if (framesSinceLastHUDUpdate > fpsMeasurementFrameInterval)
+			{
+				//update game HUD text
+				std::stringstream ssAmmo;
+				std::stringstream ssScore;
+				std::stringstream ssHiScore;
+				std::stringstream ssWave;
+				std::stringstream ssZombiesAlive;
+
+				// Update the ammo text
+				ssAmmo << bulletsInClip << "/" << bulletsSpare;
+				ammotext.setString(ssAmmo.str());
+
+				// Update the score text
+				ssScore << "Score:" << score;
+				scoreText.setString(ssScore.str());
+
+				// Update the high score text
+				ssHiScore << "Hi Score:" << hiScore;
+				hiScoreText.setString(ssHiScore.str());
+
+				// Update the wave
+				ssWave << "Wave:" << wave;
+				waveNumberText.setString(ssWave.str());
+
+				// Update the zombies remaining text
+				ssZombiesAlive << "Zombies:" << numZombiesAlive;
+				zombiesRemainingText.setString(ssZombiesAlive.str());
+
+				framesSinceLastHUDUpdate = 0;
+
+			} // End HUD update
 
 		}// End updating the scene
 

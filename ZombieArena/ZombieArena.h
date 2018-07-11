@@ -1,5 +1,6 @@
 #pragma once
 #include "Zombie.h"
+#include "MakeText.h"
 
 using namespace sf;
 

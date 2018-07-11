@@ -157,6 +157,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="MakeText.h" />
     <ClInclude Include="Pickup.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="stdafx.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CreateBackground.cpp" />
     <ClCompile Include="CreateHorde.cpp" />
+    <ClCompile Include="MakeText.cpp" />
     <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="TextureHolder.cpp" />
     <ClCompile Include="Zombie.cpp" />
