@@ -1,35 +1,8 @@
-﻿  Bullet.cpp
-  CreateBackground.cpp
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createbackground.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  CreateHorde.cpp
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(37): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\createhorde.cpp(44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  MakeText.cpp
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\maketext.cpp(13): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\maketext.cpp(25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Pickup.cpp
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\pickup.cpp(29): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\pickup.cpp(30): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\pickup.cpp(56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\pickup.cpp(114): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\pickup.cpp(117): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+﻿  SoundEffects.cpp
   ZombieArena.cpp
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(30): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(31): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(33): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(488): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(36): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(37): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(39): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\louis.m.delphie\source\repos\zombiearena\zombiearena\zombiearena.cpp(664): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating Code...
   ZombieArena.vcxproj -> C:\Users\louis.m.delphie\source\repos\ZombieArena\Debug\ZombieArena.exe
